@@ -88,11 +88,22 @@
               Run the CLI with the GitHub repo path:
             </p>
             <div
-              class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-4 py-3 mb-3"
+              class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-4 py-3 mb-3 overflow-x-auto"
             >
-              <code class="text-xs text-[var(--color-text)]"
-                >$ npx cc-hooks-install add
-                sieteunoseis/hooks.automate.builders/hooks/safety-essentials</code
+              <code class="text-xs text-[var(--color-text)] whitespace-nowrap"
+                >$ npx cc-hooks-install add owner/repo</code
+              >
+            </div>
+            <p
+              class="text-sm text-[var(--color-text-muted)] leading-relaxed mb-3"
+            >
+              For hook collections hosted in subdirectories:
+            </p>
+            <div
+              class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-4 py-3 mb-3 overflow-x-auto"
+            >
+              <code class="text-xs text-[var(--color-text)] whitespace-nowrap"
+                >$ npx cc-hooks-install add owner/repo/path/to/hooks</code
               >
             </div>
             <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
@@ -444,6 +455,24 @@ jq -r '.tool_input.command' | {
                 >sieteunoseis/spok-api</code
               >). This is fire-and-forget and never blocks the install.
             </p>
+            <p
+              class="text-sm text-[var(--color-text-muted)] leading-relaxed mt-3"
+            >
+              To opt out, use either:
+            </p>
+            <div
+              class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-4 py-3 mt-3 space-y-1 overflow-x-auto"
+            >
+              <code
+                class="text-xs text-[var(--color-text)] block whitespace-nowrap"
+                >$ npx cc-hooks-install add owner/repo --no-telemetry</code
+              >
+              <code
+                class="text-xs text-[var(--color-text)] block whitespace-nowrap"
+                >$ CC_HOOKS_NO_TELEMETRY=1 npx cc-hooks-install add
+                owner/repo</code
+              >
+            </div>
           </div>
 
           <div>
