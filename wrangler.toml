@@ -5,5 +5,5 @@ pages_build_output_dir = "dist"
 
 [[kv_namespaces]]
 binding = "CC_HOOKS_REGISTRY"
-id = ""
-preview_id = ""
+id = "35591743ae8945838b67cfc085a34e9c"
+preview_id = "3885bb7384d647e4a2c7076d4f76ec1c"

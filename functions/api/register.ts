@@ -31,17 +31,19 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       });
     }
 
-    const ghUrl = `https://api.github.com/repos/${repo}/contents/claude-hooks.json`;
+    // Use raw.githubusercontent.com to avoid GitHub API rate limits
+    const [owner, name] = repo.split("/");
+    const ghUrl = `https://raw.githubusercontent.com/${owner}/${name}/HEAD/claude-hooks.json`;
     const ghRes = await fetch(ghUrl, {
-      headers: {
-        Accept: "application/vnd.github.v3.raw",
-        "User-Agent": "cc-hooks-install",
-      },
+      headers: { "User-Agent": "cc-hooks-install" },
     });
 
     if (!ghRes.ok) {
       return new Response(
-        JSON.stringify({ error: "No valid claude-hooks.json found" }),
+        JSON.stringify({
+          error: "No valid claude-hooks.json found",
+          status: ghRes.status,
+        }),
         { status: 400, headers: corsHeaders },
       );
     }
