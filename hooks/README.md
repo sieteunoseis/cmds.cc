@@ -19,6 +19,7 @@ Installable Claude Code hook packages. Each folder contains a `claude-hooks.json
 | ------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
 | [network-safety](network-safety/)     | Block SSH, Terraform destroy, Ansible playbook runs, SNMP writes         | `npx cc-hooks-install add sieteunoseis/hooks.automate.builders/hooks/network-safety`   |
 | [cisco-cli-safety](cisco-cli-safety/) | Block writes across all Cisco UC CLIs (AXL, ISE, YANG, AudioCodes, Spok) | `npx cc-hooks-install add sieteunoseis/hooks.automate.builders/hooks/cisco-cli-safety` |
+| [windmill-safety](windmill-safety/)   | Require pull before push, block --yes and --plain-secrets on wmill       | `npx cc-hooks-install add sieteunoseis/hooks.automate.builders/hooks/windmill-safety`  |
 
 ## For CLI-specific hooks
 
