@@ -7,7 +7,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        docs: resolve(__dirname, "docs.html"),
+        hooks: resolve(__dirname, "hooks.html"),
+        "hooks/docs": resolve(__dirname, "hooks/docs.html"),
+        skills: resolve(__dirname, "skills.html"),
       },
     },
   },

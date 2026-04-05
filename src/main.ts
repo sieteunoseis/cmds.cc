@@ -42,8 +42,8 @@ async function loadHooks(): Promise<void> {
         </div>
         <p class="text-sm text-[var(--color-text-muted)] mb-3">${hook.description}</p>
         <div class="flex items-center gap-2 bg-[var(--color-bg)] rounded px-3 py-2">
-          <code class="text-xs text-[var(--color-text)] flex-1">$ npx cc-hooks-install add ${hook.repo}</code>
-          <button class="copy-btn text-[var(--color-text-muted)] text-xs cursor-pointer" data-cmd="npx cc-hooks-install add ${hook.repo}" title="Copy to clipboard">
+          <code class="text-xs text-[var(--color-text)] flex-1">$ npx @cmds-cc/hooks add ${hook.repo}</code>
+          <button class="copy-btn text-[var(--color-text-muted)] text-xs cursor-pointer" data-cmd="npx @cmds-cc/hooks add ${hook.repo}" title="Copy to clipboard">
             [copy]
           </button>
         </div>

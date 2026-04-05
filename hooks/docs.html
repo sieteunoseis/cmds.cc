@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Docs — cc-hooks-install</title>
+    <title>Docs — @cmds-cc/hooks</title>
     <meta
       name="description"
-      content="Documentation and FAQ for cc-hooks-install — install Claude Code hooks from any GitHub repo."
+      content="Documentation and FAQ for @cmds-cc/hooks — install Claude Code hooks from any GitHub repo."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,21 +23,26 @@
         <a
           href="/"
           class="text-[var(--color-accent)] font-bold text-sm hover:opacity-80 transition-opacity"
-          >HOOKS</a
+          >CMDS.CC</a
         >
         <div class="flex items-center gap-6">
           <a
-            href="/"
+            href="/hooks"
             class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
-            >Directory</a
+            >Hooks</a
           >
           <a
-            href="/docs"
+            href="/skills"
+            class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+            >Skills</a
+          >
+          <a
+            href="/hooks/docs"
             class="text-xs text-[var(--color-text)] transition-colors"
             >Docs</a
           >
           <a
-            href="https://github.com/sieteunoseis/cc-hooks-install"
+            href="https://github.com/cmds-cc/hooks"
             class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
             >GitHub</a
           >
@@ -63,7 +68,7 @@
         <div class="space-y-8">
           <div>
             <h3 class="text-[var(--color-accent)] font-bold mb-2">
-              What is cc-hooks-install?
+              What is @cmds-cc/hooks?
             </h3>
             <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
               A CLI tool that installs
@@ -91,7 +96,7 @@
               class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-4 py-3 mb-3 overflow-x-auto"
             >
               <code class="text-xs text-[var(--color-text)] whitespace-nowrap"
-                >$ npx cc-hooks-install add owner/repo</code
+                >$ npx @cmds-cc/hooks add owner/repo</code
               >
             </div>
             <p
@@ -103,7 +108,7 @@
               class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-4 py-3 mb-3 overflow-x-auto"
             >
               <code class="text-xs text-[var(--color-text)] whitespace-nowrap"
-                >$ npx cc-hooks-install add owner/repo/path/to/hooks</code
+                >$ npx @cmds-cc/hooks add owner/repo/path/to/hooks</code
               >
             </div>
             <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
@@ -392,7 +397,7 @@ jq -r '.tool_input.command' | {
               class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-4 py-3"
             >
               <code class="text-xs text-[var(--color-text)]"
-                >$ npx cc-hooks-install add owner/repo/path/to/hooks</code
+                >$ npx @cmds-cc/hooks add owner/repo/path/to/hooks</code
               >
             </div>
             <p
@@ -465,11 +470,11 @@ jq -r '.tool_input.command' | {
             >
               <code
                 class="text-xs text-[var(--color-text)] block whitespace-nowrap"
-                >$ npx cc-hooks-install add owner/repo --no-telemetry</code
+                >$ npx @cmds-cc/hooks add owner/repo --no-telemetry</code
               >
               <code
                 class="text-xs text-[var(--color-text)] block whitespace-nowrap"
-                >$ CC_HOOKS_NO_TELEMETRY=1 npx cc-hooks-install add
+                >$ CC_HOOKS_NO_TELEMETRY=1 npx @cmds-cc/hooks add
                 owner/repo</code
               >
             </div>
@@ -494,7 +499,7 @@ jq -r '.tool_input.command' | {
             <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
               Open an issue on
               <a
-                href="https://github.com/sieteunoseis/cc-hooks-install/issues"
+                href="https://github.com/sieteunoseis/@cmds-cc/hooks/issues"
                 class="text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors underline"
                 >GitHub</a
               >.
