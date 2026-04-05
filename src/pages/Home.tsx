@@ -20,14 +20,12 @@ export default function Home() {
       </header>
 
       <section className="max-w-3xl mx-auto px-6 pb-20">
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-3">
           <Link
             to="/hooks"
-            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6 hover:border-[var(--color-accent)] transition-colors block"
+            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6 hover:border-[#facc15] transition-colors block"
           >
-            <h2 className="text-[var(--color-accent)] font-bold mb-2">
-              /hooks
-            </h2>
+            <h2 className="text-[#facc15] font-bold mb-2">/hooks</h2>
             <p className="text-sm text-[var(--color-text-muted)] mb-3">
               Install Claude Code hooks from any GitHub repo. Safety guardrails,
               auto-formatting, audit logging, and more.
@@ -38,17 +36,28 @@ export default function Home() {
           </Link>
           <Link
             to="/skills"
-            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6 hover:border-[var(--color-accent)] transition-colors block"
+            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6 hover:border-[#4ade80] transition-colors block"
           >
-            <h2 className="text-[var(--color-accent)] font-bold mb-2">
-              /skills
-            </h2>
+            <h2 className="text-[#4ade80] font-bold mb-2">/skills</h2>
             <p className="text-sm text-[var(--color-text-muted)] mb-3">
               Agent skills for Cisco UC, network engineering, and DevOps.
               Installable via skills.sh.
             </p>
             <code className="text-xs text-[var(--color-text)]">
               $ npx skills add sieteunoseis/skills.automate.builders
+            </code>
+          </Link>
+          <Link
+            to="/mcp"
+            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6 hover:border-[#c084fc] transition-colors block"
+          >
+            <h2 className="text-[#c084fc] font-bold mb-2">/mcp</h2>
+            <p className="text-sm text-[var(--color-text-muted)] mb-3">
+              MCP servers for Cisco Support APIs. Connect Claude directly to bug
+              search, case management, and more.
+            </p>
+            <code className="text-xs text-[var(--color-text)]">
+              $ npx mcp-cisco-support
             </code>
           </Link>
         </div>

@@ -12,8 +12,9 @@ export default function Layout({ accent, children }: LayoutProps) {
   const navLinks = [
     { to: "/hooks", label: "Hooks" },
     { to: "/skills", label: "Skills" },
+    { to: "/mcp", label: "MCP" },
     {
-      href: "https://github.com/sieteunoseis/hooks-automate-builders",
+      href: "https://github.com/sieteunoseis/cmds.cc",
       label: "GitHub",
     },
   ];
