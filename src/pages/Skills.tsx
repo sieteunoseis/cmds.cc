@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import ScrambleText from "../components/ScrambleText";
+import AsciiArt from "../components/AsciiArt";
 import CopyButton from "../components/CopyButton";
 
 const SKILLS = [
@@ -71,13 +71,13 @@ const SKILLS = [
   },
 ];
 
-const INSTALL_CMD = "npx skills add sieteunoseis/skills.automate.builders";
+const INSTALL_CMD = "npx skills add cmds-cc/skills";
 
 export default function Skills() {
   return (
     <Layout accent="#4ade80">
       <header className="max-w-3xl mx-auto px-6 pt-20 pb-10 text-center">
-        <ScrambleText
+        <AsciiArt
           text="skills"
           className="text-4xl sm:text-5xl font-bold leading-tight mb-8 inline-block"
         />
@@ -112,7 +112,7 @@ export default function Skills() {
           {SKILLS.map((skill) => (
             <a
               key={skill.name}
-              href={`https://skills.sh/sieteunoseis/skills.automate.builders/${skill.name}`}
+              href={`https://skills.sh/cmds-cc/skills/${skill.name}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-5 block hover:border-[var(--color-accent)] transition-colors"

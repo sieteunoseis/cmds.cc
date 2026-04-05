@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
-import ScrambleText from "../components/ScrambleText";
+import AsciiArt from "../components/AsciiArt";
 
 export default function Home() {
   return (
     <Layout accent="#22d3ee">
       <header className="max-w-3xl mx-auto px-6 pt-20 pb-16 text-center">
-        <ScrambleText
+        <AsciiArt
           text="cmds.cc"
           className="text-4xl sm:text-5xl font-bold leading-tight mb-8 inline-block"
         />
@@ -44,7 +44,7 @@ export default function Home() {
               Installable via skills.sh.
             </p>
             <code className="text-xs text-[var(--color-text)]">
-              $ npx skills add sieteunoseis/skills.automate.builders
+              $ npx skills add cmds-cc/skills
             </code>
           </Link>
           <Link
