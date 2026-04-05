@@ -19,7 +19,7 @@ export default function Home() {
         </p>
       </header>
 
-      <section className="max-w-3xl mx-auto px-6 pb-20">
+      <section className="max-w-5xl mx-auto px-6 pb-20">
         <div className="grid gap-4 sm:grid-cols-3">
           <Link
             to="/hooks"
@@ -30,7 +30,7 @@ export default function Home() {
               Safety guardrails for CLI tools. Block destructive commands,
               auto-format code, and more.
             </p>
-            <div className="bg-[var(--color-bg)] rounded px-2 py-1.5 overflow-x-auto">
+            <div className="bg-[var(--color-bg)] rounded px-2 py-1.5 overflow-hidden">
               <code className="text-xs text-[var(--color-text)] whitespace-nowrap">
                 $ npx @cmds-cc/hooks add
               </code>
@@ -44,7 +44,7 @@ export default function Home() {
             <p className="text-sm text-[var(--color-text-muted)] mb-3">
               Agent skills for Cisco UC, network engineering, and DevOps.
             </p>
-            <div className="bg-[var(--color-bg)] rounded px-2 py-1.5 overflow-x-auto">
+            <div className="bg-[var(--color-bg)] rounded px-2 py-1.5 overflow-hidden">
               <code className="text-xs text-[var(--color-text)] whitespace-nowrap">
                 $ npx skills add cmds-cc/skills
               </code>
@@ -59,7 +59,7 @@ export default function Home() {
               MCP servers for Cisco Support APIs. Connect Claude to bug search,
               case management, and more.
             </p>
-            <div className="bg-[var(--color-bg)] rounded px-2 py-1.5 overflow-x-auto">
+            <div className="bg-[var(--color-bg)] rounded px-2 py-1.5 overflow-hidden">
               <code className="text-xs text-[var(--color-text)] whitespace-nowrap">
                 $ npx mcp-cisco-support
               </code>

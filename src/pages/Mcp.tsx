@@ -9,6 +9,8 @@ const SERVERS = [
       "Cisco Support APIs — bug search, case management, EoL, PSIRT advisories, product info, software suggestions, serial lookups, and RMA tracking. 46 tools across 8 APIs.",
     transport: "stdio",
     install: "npx mcp-cisco-support",
+    claudeInstall:
+      "claude mcp add --transport stdio cisco-support npx mcp-cisco-support",
     features: [
       "8 Cisco Support APIs (46 tools)",
       "OAuth 2.1, Bearer token, or stdio auth",
@@ -78,14 +80,34 @@ export default function Mcp() {
                 ))}
               </ul>
 
-              {server.install && (
-                <div className="bg-[var(--color-bg)] rounded px-3 py-2 flex items-center gap-2">
-                  <code className="text-xs text-[var(--color-text)] flex-1">
-                    $ {server.install}
-                  </code>
-                  <CopyButton text={server.install} />
-                </div>
-              )}
+              <div className="space-y-2">
+                {server.install && (
+                  <div>
+                    <p className="text-xs text-[var(--color-text-muted)] mb-1">
+                      Run directly:
+                    </p>
+                    <div className="bg-[var(--color-bg)] rounded px-3 py-2 flex items-center gap-2">
+                      <code className="text-xs text-[var(--color-text)] flex-1 whitespace-nowrap">
+                        $ {server.install}
+                      </code>
+                      <CopyButton text={server.install} />
+                    </div>
+                  </div>
+                )}
+                {server.claudeInstall && (
+                  <div>
+                    <p className="text-xs text-[var(--color-text-muted)] mb-1">
+                      Add to Claude Code:
+                    </p>
+                    <div className="bg-[var(--color-bg)] rounded px-3 py-2 flex items-center gap-2">
+                      <code className="text-xs text-[var(--color-text)] flex-1 whitespace-nowrap overflow-hidden text-ellipsis">
+                        $ {server.claudeInstall}
+                      </code>
+                      <CopyButton text={server.claudeInstall} />
+                    </div>
+                  </div>
+                )}
+              </div>
               {server.npm && (
                 <a
                   href={`https://www.npmjs.com/package/${server.npm}`}
