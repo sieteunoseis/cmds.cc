@@ -164,13 +164,15 @@ export default function GlowText({ text, className }: GlowTextProps) {
   const display = chars.map((c) => c.current).join("");
 
   return (
-    <pre
-      ref={preRef}
-      className={`select-none cursor-default glow-text ${className ?? ""}`}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      {display}
-    </pre>
+    <div className="overflow-hidden max-w-full">
+      <pre
+        ref={preRef}
+        className={`select-none cursor-default glow-text text-[10px] sm:text-xs leading-[1.1] ${className ?? ""}`}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        {display}
+      </pre>
+    </div>
   );
 }
