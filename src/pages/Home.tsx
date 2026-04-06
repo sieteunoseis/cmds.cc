@@ -19,32 +19,36 @@ export default function Home() {
         </p>
       </header>
 
-      <section className="max-w-5xl mx-auto px-6 pb-20">
-        <div className="grid gap-4 sm:grid-cols-3">
+      <section className="max-w-4xl mx-auto px-6 pb-20">
+        <div className="space-y-3">
           <Link
             to="/hooks"
-            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-5 hover:border-[#facc15] transition-colors block"
+            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-5 hover:border-[#facc15] transition-colors flex items-center gap-6"
           >
-            <h2 className="text-[#facc15] font-bold mb-2">/hooks</h2>
-            <p className="text-sm text-[var(--color-text-muted)] mb-3">
-              Safety guardrails for CLI tools. Block destructive commands,
-              auto-format code, and more.
-            </p>
-            <div className="bg-[var(--color-bg)] rounded px-2 py-1.5 overflow-hidden">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-[#facc15] font-bold mb-1">/hooks</h2>
+              <p className="text-sm text-[var(--color-text-muted)]">
+                Safety guardrails for CLI tools. Block destructive commands,
+                auto-format code, and more.
+              </p>
+            </div>
+            <div className="bg-[var(--color-bg)] rounded px-3 py-2 shrink-0">
               <code className="text-xs text-[var(--color-text)] whitespace-nowrap">
-                $ npx @cmds-cc/hooks add
+                $ npx @cmds-cc/hooks add owner/repo
               </code>
             </div>
           </Link>
           <Link
             to="/skills"
-            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-5 hover:border-[#4ade80] transition-colors block"
+            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-5 hover:border-[#4ade80] transition-colors flex items-center gap-6"
           >
-            <h2 className="text-[#4ade80] font-bold mb-2">/skills</h2>
-            <p className="text-sm text-[var(--color-text-muted)] mb-3">
-              Agent skills for Cisco UC, network engineering, and DevOps.
-            </p>
-            <div className="bg-[var(--color-bg)] rounded px-2 py-1.5 overflow-hidden">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-[#4ade80] font-bold mb-1">/skills</h2>
+              <p className="text-sm text-[var(--color-text-muted)]">
+                Agent skills for Cisco UC, network engineering, and DevOps.
+              </p>
+            </div>
+            <div className="bg-[var(--color-bg)] rounded px-3 py-2 shrink-0">
               <code className="text-xs text-[var(--color-text)] whitespace-nowrap">
                 $ npx skills add cmds-cc/skills
               </code>
@@ -52,16 +56,18 @@ export default function Home() {
           </Link>
           <Link
             to="/mcp"
-            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-5 hover:border-[#c084fc] transition-colors block"
+            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-5 hover:border-[#c084fc] transition-colors flex items-center gap-6"
           >
-            <h2 className="text-[#c084fc] font-bold mb-2">/mcp</h2>
-            <p className="text-sm text-[var(--color-text-muted)] mb-3">
-              MCP servers for Cisco Support APIs. Connect Claude to bug search,
-              case management, and more.
-            </p>
-            <div className="bg-[var(--color-bg)] rounded px-2 py-1.5 overflow-hidden">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-[#c084fc] font-bold mb-1">/mcp</h2>
+              <p className="text-sm text-[var(--color-text-muted)]">
+                MCP servers for Cisco Support APIs. Connect Claude to bug
+                search, case management, and more.
+              </p>
+            </div>
+            <div className="bg-[var(--color-bg)] rounded px-3 py-2 shrink-0">
               <code className="text-xs text-[var(--color-text)] whitespace-nowrap">
-                $ npx mcp-cisco-support
+                $ claude mcp add cisco-support npx mcp-cisco-support
               </code>
             </div>
           </Link>
