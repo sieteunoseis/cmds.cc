@@ -1,13 +1,13 @@
-# hooks.automate.builders
+# cmds.cc
 
-Landing page, API, and curated hook collections for [cc-hooks-install](https://github.com/sieteunoseis/cc-hooks-install).
+Landing page, API, and curated hook collections for [@cmds-cc/hooks](https://github.com/cmds-cc/hooks).
 
-**Live site:** [hooks.automate.builders](https://hooks.automate.builders)
+**Live site:** [cmds.cc](https://cmds.cc)
 
 ## Install any hook collection
 
 ```bash
-npx cc-hooks-install add sieteunoseis/hooks.automate.builders/hooks/<collection>
+npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/<collection>
 ```
 
 ## Available Hooks
@@ -50,13 +50,13 @@ npx cc-hooks-install add sieteunoseis/hooks.automate.builders/hooks/<collection>
 
 ```bash
 # Essential safety guardrails
-npx cc-hooks-install add sieteunoseis/hooks.automate.builders/hooks/safety-essentials
+npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/safety-essentials
 
 # Add cloud protection
-npx cc-hooks-install add sieteunoseis/hooks.automate.builders/hooks/cloud-safety
+npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/cloud-safety
 
 # Add Cisco UC protection
-npx cc-hooks-install add sieteunoseis/hooks.automate.builders/hooks/cisco-cli-safety
+npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/cisco-cli-safety
 ```
 
 ## How it works
@@ -76,8 +76,8 @@ hooks/
 Some tools ship `claude-hooks.json` in their own repos:
 
 ```bash
-npx cc-hooks-install add sieteunoseis/spok-api
-npx cc-hooks-install add sieteunoseis/cisco-axl
+npx @cmds-cc/hooks add sieteunoseis/spok-api
+npx @cmds-cc/hooks add sieteunoseis/cisco-axl
 ```
 
 ## Contributing
@@ -85,7 +85,7 @@ npx cc-hooks-install add sieteunoseis/cisco-axl
 Add a new collection:
 
 1. Create a folder under `hooks/` with a descriptive name
-2. Add a `claude-hooks.json` following the [convention format](https://github.com/sieteunoseis/cc-hooks-install#for-cli-authors)
+2. Add a `claude-hooks.json` following the [convention format](https://github.com/cmds-cc/hooks#for-cli-authors)
 3. Open a PR
 
 ## License
