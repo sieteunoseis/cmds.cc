@@ -1,79 +1,41 @@
+import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import GlowText from "../components/GlowText";
 import CopyButton from "../components/CopyButton";
 
-const SKILLS = [
-  {
-    name: "cisco-uc-engineer",
-    tag: "orchestrator",
-    description:
-      "Orchestrates all Cisco UC CLI tools for troubleshooting, provisioning, and monitoring",
-  },
-  {
-    name: "cisco-axl-cli",
-    description:
-      "Manage CUCM via AXL — phones, lines, route patterns, SIP profiles, SQL queries",
-  },
-  {
-    name: "cisco-ise-cli",
-    description:
-      "Manage Cisco ISE — endpoints, guests, network devices, RADIUS/TACACS",
-  },
-  {
-    name: "cisco-yang-cli",
-    description:
-      "Manage IOS-XE devices via RESTCONF — voice troubleshooting, dial-peers, SIP trace",
-  },
-  {
-    name: "cisco-risport-cli",
-    description:
-      "Query CUCM real-time device registration — phone status, SIP trunk health",
-  },
-  {
-    name: "cisco-perfmon-cli",
-    description:
-      "Collect CUCM performance counters — CPU, memory, call stats, sparklines",
-  },
-  {
-    name: "cisco-dime-cli",
-    description:
-      "Manage CUCM log files — selecting, downloading service logs via DIME",
-  },
-  {
-    name: "cisco-cdr-mcp",
-    description:
-      "Query CUCM call detail records via MCP — CDR search, call tracing, quality stats",
-  },
-  {
-    name: "cisco-support-cli",
-    description:
-      "Query Cisco Support APIs — bug search, EoL dates, PSIRT advisories, RMA tracking",
-  },
-  {
-    name: "cisco-ucce-cli",
-    description:
-      "Monitor Cisco UCCE — agent states, queue stats, PG diagnostics, system health",
-  },
-  {
-    name: "audiocodes-cli",
-    description:
-      "Troubleshoot VoIP on AudioCodes SBCs — call stats, alarms, SIP trace",
-  },
-  {
-    name: "genesys-cli",
-    description:
-      "Query Genesys Cloud — agent states, queue stats, routing diagnostics",
-  },
-  {
-    name: "ss-cli",
-    description:
-      "Manage secrets from Delinea Secret Server — credentials, env sync, password rotation",
-  },
-];
+interface Skill {
+  name: string;
+  description: string;
+  author?: string;
+  tag?: string;
+}
+
+const SKILLS_URL =
+  "https://raw.githubusercontent.com/cmds-cc/skills/master/skills.json";
 
 const INSTALL_CMD = "npx skills add cmds-cc/skills";
 
 export default function Skills() {
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch(SKILLS_URL)
+      .then((res) => {
+        if (!res.ok) throw new Error(`Failed to fetch skills: ${res.status}`);
+        return res.json();
+      })
+      .then((data: Skill[]) => {
+        setSkills(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <Layout accent="#4ade80">
       <header className="max-w-3xl mx-auto px-6 pt-20 pb-10 text-center">
@@ -105,34 +67,49 @@ export default function Skills() {
       </header>
 
       <section className="max-w-3xl mx-auto px-6 pb-20">
-        <h2 className="text-sm font-bold text-[var(--color-text)] mb-6">
-          Skills ({SKILLS.length})
-        </h2>
-        <div className="space-y-3">
-          {SKILLS.map((skill) => (
-            <a
-              key={skill.name}
-              href={`https://skills.sh/cmds-cc/skills/${skill.name}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-5 block hover:border-[var(--color-accent)] transition-colors"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-[var(--color-accent)] font-bold text-sm">
-                  {skill.name}
-                </span>
-                {skill.tag && (
-                  <span className="text-xs bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/20 rounded-full px-2 py-0.5">
-                    {skill.tag}
-                  </span>
-                )}
-              </div>
-              <p className="text-sm text-[var(--color-text-muted)]">
-                {skill.description}
-              </p>
-            </a>
-          ))}
-        </div>
+        {loading && (
+          <p className="text-sm text-[var(--color-text-muted)] text-center">
+            Loading skills...
+          </p>
+        )}
+        {error && <p className="text-sm text-red-400 text-center">{error}</p>}
+        {!loading && !error && (
+          <>
+            <h2 className="text-sm font-bold text-[var(--color-text)] mb-6">
+              Skills ({skills.length})
+            </h2>
+            <div className="space-y-3">
+              {skills.map((skill) => (
+                <a
+                  key={skill.name}
+                  href={`https://skills.sh/cmds-cc/skills/${skill.name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-5 block hover:border-[var(--color-accent)] transition-colors"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-[var(--color-accent)] font-bold text-sm">
+                      {skill.name}
+                    </span>
+                    {skill.tag && (
+                      <span className="text-xs bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/20 rounded-full px-2 py-0.5">
+                        {skill.tag}
+                      </span>
+                    )}
+                    {skill.author && (
+                      <span className="text-xs text-[var(--color-text-muted)]">
+                        by {skill.author}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm text-[var(--color-text-muted)]">
+                    {skill.description}
+                  </p>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
       </section>
     </Layout>
   );
