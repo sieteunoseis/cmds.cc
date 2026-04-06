@@ -7,7 +7,7 @@ Landing page, API, and curated hook collections for [@cmds-cc/hooks](https://git
 ## Install any hook collection
 
 ```bash
-npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/<collection>
+npx @cmds-cc/hooks add sieteunoseis/hooks/<collection>
 ```
 
 ## Available Hooks
@@ -50,13 +50,13 @@ npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/<collection>
 
 ```bash
 # Essential safety guardrails
-npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/safety-essentials
+npx @cmds-cc/hooks add sieteunoseis/hooks/safety-essentials
 
 # Add cloud protection
-npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/cloud-safety
+npx @cmds-cc/hooks add sieteunoseis/hooks/cloud-safety
 
 # Add Cisco UC protection
-npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/cisco-cli-safety
+npx @cmds-cc/hooks add sieteunoseis/hooks/cisco-cli-safety
 ```
 
 ## How it works
