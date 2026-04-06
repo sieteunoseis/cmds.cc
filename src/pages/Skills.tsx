@@ -8,6 +8,7 @@ interface Skill {
   description: string;
   author?: string;
   tag?: string;
+  hooks?: string;
 }
 
 const SKILLS_URL =
@@ -105,6 +106,18 @@ export default function Skills() {
                   <p className="text-sm text-[var(--color-text-muted)]">
                     {skill.description}
                   </p>
+                  {skill.hooks && (
+                    <p className="text-xs text-[var(--color-text-muted)] mt-2">
+                      hooks:{" "}
+                      <a
+                        href={`https://github.com/${skill.hooks}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-[var(--color-accent)] hover:opacity-80 transition-opacity"
+                      >
+                        {skill.hooks}
+                      </a>
+                    </p>
+                  )}
                 </a>
               ))}
             </div>
