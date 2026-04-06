@@ -25,7 +25,7 @@ npx @cmds-cc/hooks add cmds-cc/cmds.cc/hooks/windmill-safety
 For full safety guidance (risk tiers, pre-flight checklists, safe-usage patterns), install the [wmill-safety skill](https://github.com/cmds-cc/skills/tree/master/skills/wmill-safety):
 
 ```bash
-npx @cmds-cc/skills add cmds-cc/skills
+npx skills add cmds-cc/skills
 ```
 
 ## License
