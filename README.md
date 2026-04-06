@@ -1,92 +1,16 @@
 # cmds.cc
 
-Landing page, API, and curated hook collections for [@cmds-cc/hooks](https://github.com/cmds-cc/hooks).
+Landing page and API for [cmds.cc](https://cmds.cc).
 
 **Live site:** [cmds.cc](https://cmds.cc)
 
-## Install any hook collection
+## Related Repos
 
-```bash
-npx @cmds-cc/hooks add sieteunoseis/hooks/<collection>
-```
-
-## Available Hooks
-
-### General Safety
-
-| Collection          | Hooks | Description                                                      |
-| ------------------- | ----- | ---------------------------------------------------------------- |
-| `safety-essentials` | 4     | Block rm -rf, force push, git reset --hard, secrets in commits   |
-| `secrets-safety`    | 4     | Block .env/.pem reads, env dumps, Vault writes, 1Password writes |
-| `database-safety`   | 2     | Block DROP TABLE, TRUNCATE, migrate:fresh/reset                  |
-| `docker-safety`     | 1     | Block docker system prune, force remove, volume deletion         |
-
-### Cloud & Infrastructure
-
-| Collection          | Hooks | Description                                                 |
-| ------------------- | ----- | ----------------------------------------------------------- |
-| `cloud-safety`      | 3     | Block destructive AWS, GCP, and Azure CLI operations        |
-| `kubernetes-safety` | 5     | Block kubectl delete, drain, exec, helm uninstall           |
-| `cloudflare-safety` | 5     | Block wrangler delete, KV purge, D1 drops, R2 deletion      |
-| `network-safety`    | 4     | Block SSH, Terraform destroy, Ansible playbook, SNMP writes |
-
-### Network Engineering & Cisco UC
-
-| Collection         | Hooks | Description                                                                    |
-| ------------------ | ----- | ------------------------------------------------------------------------------ |
-| `cisco-cli-safety` | 5     | Block writes across cisco-axl, cisco-ise, cisco-yang, audiocodes-cli, spok-api |
-| `windmill-safety`  | 7     | Require pull before push, block runs, block secret reads                       |
-
-### Productivity
-
-| Collection           | Hooks | Description                                               |
-| -------------------- | ----- | --------------------------------------------------------- |
-| `auto-format`        | 1     | Run prettier after Claude writes or edits files           |
-| `bash-audit-log`     | 1     | Log all bash commands to ~/.claude/bash-log.txt           |
-| `notify-on-stop`     | 2     | Desktop notification when Claude finishes (macOS or cmux) |
-| `npm-publish-safety` | 4     | Block npm unpublish, deprecate, owner, and access changes |
-
-## Quick start
-
-```bash
-# Essential safety guardrails
-npx @cmds-cc/hooks add sieteunoseis/hooks/safety-essentials
-
-# Add cloud protection
-npx @cmds-cc/hooks add sieteunoseis/hooks/cloud-safety
-
-# Add Cisco UC protection
-npx @cmds-cc/hooks add sieteunoseis/hooks/cisco-cli-safety
-```
-
-## How it works
-
-Each collection is a folder with a `claude-hooks.json` file. The CLI fetches it from GitHub, shows an interactive prompt to select which hooks to install, and merges them into `~/.claude/settings.json`.
-
-```
-hooks/
-├── safety-essentials/claude-hooks.json
-├── cloud-safety/claude-hooks.json
-├── kubernetes-safety/claude-hooks.json
-└── ...
-```
-
-## For CLI-specific hooks
-
-Some tools ship `claude-hooks.json` in their own repos:
-
-```bash
-npx @cmds-cc/hooks add sieteunoseis/spok-api
-npx @cmds-cc/hooks add sieteunoseis/cisco-axl
-```
-
-## Contributing
-
-Add a new collection:
-
-1. Create a folder under `hooks/` with a descriptive name
-2. Add a `claude-hooks.json` following the [convention format](https://github.com/cmds-cc/hooks#for-cli-authors)
-3. Open a PR
+| Repo                                                        | Description                                | Install                                                  |
+| ----------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------- |
+| [@cmds-cc/hooks](https://github.com/cmds-cc/hooks)          | Hook installer CLI                         | `npx @cmds-cc/hooks add <repo>/<collection>`             |
+| [cmds-cc/skills](https://github.com/cmds-cc/skills)         | AI agent skills for voice, UC, and telecom | `npx skills add cmds-cc/skills`                          |
+| [sieteunoseis/hooks](https://github.com/sieteunoseis/hooks) | Hook collections for CLI safety            | `npx @cmds-cc/hooks add sieteunoseis/hooks/<collection>` |
 
 ## License
 
