@@ -6,10 +6,10 @@ export default function Home() {
   return (
     <Layout accent="#22d3ee">
       <header className="max-w-3xl mx-auto px-6 pt-20 pb-16 text-center">
-        <GlowText
-          text="cmds.cc"
-          className="text-4xl sm:text-5xl font-bold leading-tight mb-8 inline-block"
-        />
+        <GlowText text="cmds" className="mb-2 inline-block" />
+        <p className="text-sm text-[var(--color-accent)] font-bold mb-6 tracking-widest">
+          .cc
+        </p>
         <p className="text-lg text-[var(--color-text)] mb-3">
           Commands for Claude Code
         </p>
